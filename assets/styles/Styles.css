@@ -1,7 +1,7 @@
 body {
   width: 850px;
   margin: auto;
-  font-family: -apple-system, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;
 }
 
 .footer {
