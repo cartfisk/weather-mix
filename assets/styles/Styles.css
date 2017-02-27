@@ -18,3 +18,39 @@ body {
   font-size: 1.5em;
   text-align: center;
 }
+
+table {
+  width: 100%;
+}
+
+table > tr {
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+}
+
+
+td:hover {
+    cursor: pointer;
+}
+
+tr {
+  border: solid;
+  border-width: 1px 0;
+  border-color: grey;
+}
+
+th {
+  text-align: left;
+  padding-bottom: 5px;
+}
+
+td {
+  padding: 10px;
+  padding-right: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

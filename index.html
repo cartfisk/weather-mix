@@ -10,6 +10,10 @@
 
   <link rel="stylesheet" href="assets/styles/Styles.css?v=1.0">
 
+  <link href="assets/styles/css/jquery-ui.css" rel="stylesheet" type="text/css">
+
+  <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
@@ -23,6 +27,47 @@
 
   <main>
     <input id="zipcode" type="text" placeholder="Zipcode" maxlength="5"></input>
+
+    <div id="sc-likes">
+        <h3>[Playlist Name]</h3>
+
+        <table id="sort" rules="rows">
+          <thead>
+            <tr>
+              <th>Track</th>
+              <th>Artist</th>
+              <th>Time</th>
+              <th>Add</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="clickable-row">
+              <td><a href="javascript:SC.resolve('https://soundcloud.com/brianfresco/higher-feat-chance-the-rapper-and-blue-hawaii').then(streamTrack);">Higher feat. Chance the Rapper and Blue Hawaii</a></td>
+              <td>Brian Fresco</td>
+              <td>4:01</td>
+              <td><i class="fa fa-plus"></i></td>
+            </tr>
+            <tr class="clickable-row">
+              <td class="track-name-url"><a href="javascript:SC.resolve('https://soundcloud.com/pharez-uzzah/on-the-phly-phortify').then(streamTrack);">Phortify</a></td>
+              <td class="artist">Pharez Uzzah</td>
+              <td class="track-time">2:22</td>
+              <td class="track-action"><i class="fa fa-plus"></i></td>
+            </tr>
+            <tr class="clickable-row">
+              <td><a href="javascript:SC.resolve('https://soundcloud.com/andersonpaak/room-in-here-feat-the-game-sonyae-elise').then(streamTrack);">Room In Here feat. The Game & Sonyae Elise</a></td>
+              <td>anderson .paak</td>
+              <td>3:59</td>
+              <td><i class="fa fa-plus"></i></td>
+            </tr>
+            <tr class="clickable-row">
+              <td class="track-name-url"><a href="javascript:SC.resolve('https://soundcloud.com/j-cole/high-for-hours').then(streamTrack);">High for Hours</a></td>
+              <td class="artist">J. Cole</td>
+              <td class="track-time">4:11</td>
+              <td class="track-action"><i class="fa fa-plus"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
   </main>
 
   <footer>
@@ -30,5 +75,31 @@
   </footer>
 
   <script src="assets/scripts/App.js"></script>
+  <script src="assets/scripts/jquery.js"></script>
+  <script src="assets/scripts/jquery-ui.js"></script>
+  <script>
+  $(document).ready(function() {
+
+      //make entire row clickable
+      $('.clickable-row').click(function() {
+          var href = $(this).find("a").attr("href");
+          if(href) {
+              window.location = href;
+          }
+      });
+    });
+
+    // Sortable queue lists functionality via jQuery UI
+    var fixHelper = function(e, ui) {
+    ui.children().each(function() {
+        $(this).width($(this).width());
+    });
+    return ui;
+    };
+
+    $("#sort tbody").sortable({
+        helper: fixHelper
+    }).disableSelection();
+  </script>
 </body>
 </html>
