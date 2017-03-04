@@ -171,7 +171,8 @@
   $(document).ready(function() {
 
       //make entire row clickable
-      $('.clickable-row').click(function() {
+      $('.clickable-row').click(function(event) {
+          event.preventDefault();
           var href = $(this).find("a").attr("href");
           if(href) {
               SC.resolve(href).then(streamTrack);
