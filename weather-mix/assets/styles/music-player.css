@@ -1,0 +1,45 @@
+#track{
+    width: 500px;
+    height: 10px;
+    background: #000000;
+    text-align:center;
+}
+
+#scrubber{
+    width:2px;
+    height: 10px;
+    background: Red;
+}
+
+.fa {
+    color: black;
+    cursor: pointer;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+
+#volume-track{
+    display: inline-block;
+    width: 100px;
+    height: 8px;
+    margin-bottom: 2px;
+    background: #000000;
+    text-align:center;
+}
+
+#title{
+    width: 350px;
+    margin-top: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#volume-slider{
+    width:2px;
+    height: 8px;
+    background: Red;
+}

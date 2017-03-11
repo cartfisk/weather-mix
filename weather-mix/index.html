@@ -1,199 +1,138 @@
 <!doctype html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-  <title>weatherMix</title>
-  <meta name="description" content="weatherMix">
-  <meta name="author" content="webMusic DevTeam LUC CS424">
+    <title>weatherMix</title>
+    <meta name="description" content="weatherMix">
+    <meta name="author" content="webMusic DevTeam LUC CS424">
 
-  <script type="text/javascript" src="../sdk.js"></script>
+    <script type="text/javascript" src="../sdk.js"></script>
 
-  <link rel="stylesheet" href="assets/styles/Styles.css?v=1.0">
+    <link rel="stylesheet" href="assets/styles/Styles.css?v=1.0">
 
-  <link href="assets/styles/css/jquery-ui.css" rel="stylesheet" type="text/css">
+    <link href="assets/styles/jquery-ui.css" rel="stylesheet" type="text/css">
 
-  <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
-</head>
+    <link href="assets/styles/music-player.css" rel="stylesheet" type="text/css">
 
-<body>
-  <header>
-    <h1 class="text-center">weatherMix</h1>
-    <h3 class="text-center">Find the right music for the weather.</h2>
-  </header>
+    <!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+	<![endif]-->
+  </head>
 
-  <main>
-    <input id="zipcode" type="text" placeholder="Zipcode" maxlength="5"></input>
-    <!-- <button id="zip-submit">Submit</button> -->
-    <span id="weather-icon"></span>
-    <div id="log"></div>
+  <body>
+    <header>
+      <h1 class="text-center">weatherMix</h1>
+      <h3 class="text-center">Find the right music for the weather.</h2>
+</header>
 
-    <div id="sc-likes">
-        <h3>[Playlist Name]</h3>
+<main>
+  <input id="zipcode" type="text" placeholder="Zipcode" maxlength="5"></input>
+  <!-- <button id="zip-submit">Submit</button> -->
+  <span id="weather-icon"></span>
+  <div id="log"></div>
 
-        <table id="sort" rules="rows">
-          <thead>
-            <tr>
-              <th>Track</th>
-              <th>Artist</th>
-              <th>Time</th>
-              <th>Add</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="clickable-row">
-              <td class="track-name-url"><a href="https://soundcloud.com/brianfresco/higher-feat-chance-the-rapper-and-blue-hawaii">Higher feat. Chance the Rapper and Blue Hawaii</a></td>
-              <td class="artist">Brian Fresco</td>
-              <td class="track-time">4:01</td>
-              <td class="track-action"><i class="fa fa-bars"></i></td>
-            </tr>
-            <tr class="clickable-row">
-              <td class="track-name-url"><a href="https://soundcloud.com/pharez-uzzah/on-the-phly-phortify">Phortify</a></td>
-              <td class="artist">Pharez Uzzah</td>
-              <td class="track-time">2:22</td>
-              <td class="track-action"><i class="fa fa-bars"></i></td>
-            </tr>
-            <tr class="clickable-row">
-              <td class="track-name-url"><a href="https://soundcloud.com/andersonpaak/room-in-here-feat-the-game-sonyae-elise">Room In Here feat. The Game & Sonyae Elise</a></td>
-              <td class="artist">anderson .paak</td>
-              <td class="track-time">3:59</td>
-              <td class="track-action"><i class="fa fa-bars"></i></td>
-            </tr>
-            <tr class="clickable-row">
-              <td class="track-name-url"><a href="https://soundcloud.com/j-cole/high-for-hours">High for Hours</a></td>
-              <td class="artist">J. Cole</td>
-              <td class="track-time">4:11</td>
-              <td class="track-action"><i class="fa fa-bars"></i></td>
-            </tr>
-          </tbody>
-        </table>
+  <div id="sc-likes">
+    <h3>[Playlist Name]</h3>
+
+    <table id="sort" rules="rows">
+      <thead>
+        <tr>
+          <th>Track</th>
+          <th>Artist</th>
+          <th>Time</th>
+          <th>Add</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="clickable-row">
+          <td class="track-name-url"><a href="https://soundcloud.com/brianfresco/higher-feat-chance-the-rapper-and-blue-hawaii">Higher feat. Chance the Rapper and Blue Hawaii</a></td>
+          <td class="artist">Brian Fresco</td>
+          <td class="track-time">4:01</td>
+          <td class="track-action"><i class="fa fa-bars"></i></td>
+        </tr>
+        <tr class="clickable-row">
+          <td class="track-name-url"><a href="https://soundcloud.com/pharez-uzzah/on-the-phly-phortify">Phortify</a></td>
+          <td class="artist">Pharez Uzzah</td>
+          <td class="track-time">2:22</td>
+          <td class="track-action"><i class="fa fa-bars"></i></td>
+        </tr>
+        <tr class="clickable-row">
+          <td class="track-name-url"><a href="https://soundcloud.com/andersonpaak/room-in-here-feat-the-game-sonyae-elise">Room In Here feat. The Game & Sonyae Elise</a></td>
+          <td class="artist">anderson .paak</td>
+          <td class="track-time">3:59</td>
+          <td class="track-action"><i class="fa fa-bars"></i></td>
+        </tr>
+        <tr class="clickable-row">
+          <td class="track-name-url"><a href="https://soundcloud.com/j-cole/high-for-hours">High for Hours</a></td>
+          <td class="artist">J. Cole</td>
+          <td class="track-time">4:11</td>
+          <td class="track-action"><i class="fa fa-bars"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <br/><br/>
+
+  <!--Player Elements -->
+  <div style="width:100%; text-align: center;" id="control-bar">
+    <div style="display: inline-block" id="player-elements">
+      <!-- Playback Controls -->
+      <div id="player-controls">
+	<button style="float: left" id="shuffle"><i id="shuffle-inner-icon" class="fa fa-random"></i></button>
+	<button id="previous" ><i class="fa fa-step-backward"></i></button>
+        <button id="play-pause"><i id="play-pause-inner-icon" class="fa fa-play"></i></button>
+        <button id="next"><i class="fa fa-step-forward"></i></button>
+	<button id="repeat" style="float: right; "><i id="repeat-inner-icon" class="fa fa-repeat"></i></button>
       </div>
-  </main>
+      <!-- /Playback Controls -->
 
-    <footer>
-      <p class="footer text-center">Copyright 2017 Carter Konz, Nieky Allen, Jesse Meza, Zvonko Kavelij</p>
-    </footer>
-
-    <div id="control-bar">
-        <div id="info">
-            <span id="title"></span>
-            <button id="next"><i class="fa fa-backward"></i></button>
-            <button id="play"><i class="fa fa-play"></i></button>
-            <button id="pause"><i class="fa fa-pause"></i></button>
-            <button id="previous"><i class="fa fa-forward"></i></button>
-            <span id="currTime"></span>
-        </div>
-        <div id="progressbar"></div>
+      <!-- Current Time Text To left of scrubber --->
+      <span style="display: inline-block" id="currTime">0:00</span>
+      <!-- /Current Time Text To left of scrubber --->
+      <!-- Music Scrubber -->
+      <div style="display: inline-block" id="track">
+	<div id="scrubber">
+	</div>
+      </div>
+      <!-- /Music Scrubber -->
+      <span style="display: inline-block" id="duration">0:00</span>
+      <br/>
+      <!-- Volume Slider and Icons -->
+      <div style="inline-block; float: left" id="volume-elements">
+	<button  id="volume-up-image" style="cursor: default;"><i class="fa fa-volume-down"></i></button>
+	<div id="volume-track">
+	  <div id="volume-slider">
+	  </div>
+	</div>
+	<button  id="volume-down-image" style="cursor: default;"><i class="fa fa-volume-up"></i></button>  
+      </div>
+      <!-- /Volume Slider and Icons -->
+      <!-- Track title Placed Below the Scrubber -->
+      <div id="title"></div>
+      <!-- /Track title Placed Below the Scrubber -->
     </div>
+    <!-- /Player Elements -->
+    
+</main>
 
-    <!-- All SoundCloud API functionality for streaming a track -->
-    <script type="text/javascript">
-    SC.initialize({
-        client_id: '175c043157ffae2c6d5fed16c3d95a4c'
-    });
 
-    var inputField = document.getElementById('url');
-    var title = document.getElementById('title');
-    var info = document.getElementById('info');
-    var currTime = document.getElementById('currTime');
-    var controlBar = document.getElementById('control-bar');
-    var currentPlayer;
-    var trackQueue = [];
 
-    var streamTrack = function(track){
-        return SC.stream('/tracks/' + track.id).then(function(player){
-            controlBar.style.display = 'block';
-            title.innerText = track.title + ' by ' + track.user.username;
-            info.style.display = 'inline-block';
-            if (currentPlayer) {
-                currentPlayer.pause();
-            }
-            currentPlayer = player;
 
-            player.play().then(startCounter);
-            console.log(player.getVolume());
-        }).catch(function(){
-            console.log(arguments);
-        });
-    };
 
-    var search = function(event){
-        event.preventDefault();
-        SC.resolve(inputField.value).then(streamTrack);
-    };
+<footer>
+  <p class="footer text-center">Copyright 2017 Carter Konz, Nieky Allen, Jesse Meza, Zvonko Kavelij</p>
+</footer>
 
-    //called when player starts playing
-    var startCounter = setInterval(function() {
-        if(currentPlayer) {
-            console.log(currentPlayer.currentTime());
-            var newTime = currentPlayer.currentTime(), min = (newTime/1000/60) << 0, sec = Math.floor((newTime/1000) % 60);
-            if(sec < 10) {
-                sec = "0" + sec;
-            }
-            currTime.innerText = min + ':' + sec;
-        }
-    }, 1000);
 
-    //control functions
-    document.getElementById('searchForm').addEventListener('submit', search);
-
-    document.getElementById('pause').addEventListener('click', function(){
-        if (currentPlayer) {
-            currentPlayer.pause();
-        }
-    });
-
-    document.getElementById('play').addEventListener('click', function(){
-        if (currentPlayer) {
-            currentPlayer.play();
-        }
-    });
-
-    document.getElementById('next').addEventListener('click', function(){
-        if (currentPlayer) {
-            //play next track
-        }
-    });
-
-    document.getElementById('previous').addEventListener('click', function(){
-        if (currentPlayer) {
-            //play previous track
-        }
-    });
-    </script>
-
-  <script src="assets/scripts/App.js"></script>
-  <script src="assets/scripts/jquery.js"></script>
-  <script src="assets/scripts/jquery-ui.js"></script>
-  <script>
-  $(document).ready(function() {
-
-      //make entire row clickable
-      $('.clickable-row').click(function(event) {
-          event.preventDefault();
-          var href = $(this).find("a").attr("href");
-          if(href) {
-              SC.resolve(href).then(streamTrack);
-          }
-      });
-    });
-
-    // Sortable queue lists functionality via jQuery UI
-    var fixHelper = function(e, ui) {
-    ui.children().each(function() {
-        $(this).width($(this).width());
-    });
-    return ui;
-    };
-
-    $("#sort tbody").sortable({
-        helper: fixHelper
-    }).disableSelection();
-  </script>
+<script src="assets/scripts/App.js"></script>
+<script src="assets/scripts/jquery.js"></script>
+<script src="assets/scripts/jquery-ui.js"></script>
+<script src="assets/scripts/player-queue.js"></script>
+<script src="assets/scripts/player-controls.js"></script>
 </body>
 </html>
