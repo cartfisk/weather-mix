@@ -18,6 +18,9 @@
 
     <link href="assets/styles/music-player.css" rel="stylesheet" type="text/css">
 
+    <link href="assets/styles/weather-ui.css" rel="stylesheet" type="text/css">
+
+     
     <!--[if lt IE 9]>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
 	<![endif]-->
@@ -31,9 +34,12 @@
 
 <main>
   <input id="zipcode" type="text" placeholder="Zipcode" maxlength="5"></input>
-  <!-- <button id="zip-submit">Submit</button> -->
-  <span id="weather-icon"></span>
-  <div id="log"></div>
+  <button id="zip-submit">Submit</button>
+
+  <div id="weather-information">
+    <img id="weather-icon" src="" alt="Icon Holder">
+    <p id="temperature" style="display: inline-block">Weather Here</p>
+    <p id="condition">Condition here</p>
 
   <div id="sc-likes">
     <h3>[Playlist Name]</h3>

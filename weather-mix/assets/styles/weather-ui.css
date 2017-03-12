@@ -1,0 +1,10 @@
+#temperature {
+    font-size: 75px;
+    margin: auto;
+}
+
+#condition {
+    margin: 2px;
+    font-size: 30px;
+    margin-left: 10px;
+}
