@@ -33,8 +33,8 @@
 </header>
 
 <main>
-  <input class="zipcode" id="zipcode-player" type="text" placeholder="Zipcode" maxlength="5"></input>
-  <!-- <button id="zip-submit">Submit</button> -->
+  <!-- <input class="zipcode" id="zipcode-player" type="text" placeholder="Zipcode" maxlength="5"></input> -->
+  <a id="change-location" class="big-button" href="index.html">Change Location</a>
 
   <div id="weather-information">
     <img id="weather-icon" class="text-center" src="">
@@ -82,47 +82,59 @@
     </table>
   </div>
 
-  <br/><br/>
+  <div id="padding-block-150"> </div>
 
   <!--Player Elements -->
   <div style="width:100%; text-align: center;" id="control-bar">
     <div style="display: inline-block" id="player-elements">
       <!-- Playback Controls -->
       <div id="player-controls">
-	<button style="float: left" id="shuffle"><i id="shuffle-inner-icon" class="fa fa-random"></i></button>
-	<button id="previous" ><i class="fa fa-step-backward"></i></button>
+        <button style="float: left" id="shuffle"><i id="shuffle-inner-icon" class="fa fa-random"></i></button>
+	      <button id="previous" ><i class="fa fa-step-backward"></i></button>
         <button id="play-pause"><i id="play-pause-inner-icon" class="fa fa-play"></i></button>
         <button id="next"><i class="fa fa-step-forward"></i></button>
-	<button id="repeat" style="float: right; "><i id="repeat-inner-icon" class="fa fa-repeat"></i></button>
+	      <button id="repeat" style="float: right; "><i id="repeat-inner-icon" class="fa fa-repeat"></i></button>
       </div>
       <!-- /Playback Controls -->
 
-      <!-- Current Time Text To left of scrubber --->
-      <span style="display: inline-block" id="currTime">0:00</span>
-      <!-- /Current Time Text To left of scrubber --->
-      <!-- Music Scrubber -->
-      <div style="display: inline-block" id="track">
-	<div id="scrubber">
-	</div>
+      <div>
+        <!-- Current Time Text To left of scrubber --->
+        <span style="display: inline-block" id="currTime">0:00</span>
+        <!-- /Current Time Text To left of scrubber --->
+
+        <!-- Music Scrubber -->
+        <div style="display: inline-block" id="track">
+          <div id="scrubber" class="bar">
+          </div>
+        </div>
+        <!-- /Music Scrubber -->
+
+        <span style="display: inline-block" id="duration">0:00</span>
       </div>
-      <!-- /Music Scrubber -->
-      <span style="display: inline-block" id="duration">0:00</span>
-      <br/>
+
+
+      <div id="padding-block-50"> </div>
+
       <!-- Volume Slider and Icons -->
-      <div style="inline-block; float: left" id="volume-elements">
-	<button  id="volume-up-image" style="cursor: default;"><i class="fa fa-volume-down"></i></button>
-	<div id="volume-track">
-	  <div id="volume-slider">
-	  </div>
-	</div>
-	<button  id="volume-down-image" style="cursor: default;"><i class="fa fa-volume-up"></i></button>
+      <div id="volume-elements">
+
+        <button  id="volume-up-image" style="cursor: default;"><i class="fa fa-volume-down"></i></button>
+
+        <div id="volume-track">
+          <div id="volume-slider" class="bar"></div>
+        </div>
+
+	      <button id="volume-down-image" style="cursor: default;"><i class="fa fa-volume-up"></i></button>
+
       </div>
       <!-- /Volume Slider and Icons -->
+
       <!-- Track title Placed Below the Scrubber -->
       <div id="title"></div>
       <!-- /Track title Placed Below the Scrubber -->
     </div>
-    <!-- /Player Elements -->
+  </div>
+  <!-- /Player Elements -->
 
 </main>
 

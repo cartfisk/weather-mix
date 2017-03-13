@@ -24,21 +24,23 @@ var temp;
 
 // called on keyup event in zip input field, constructs
 function updateZip() {
-  if (zipcodeHomeInput.value.length >= 5) {
     zipCode = "zip=" + zipcodeHomeInput.value + ",us&APPID=" + appId;
     var url = baseUrl + zipCode + "&units=imperial";
     console.log(zipCode);
     sendRequest(url);
-  }
 };
 
 function updateZipHome() {
-  updateZip();
-  window.location.href = "player.html";
+  if (zipcodeHomeInput.value.length >= 5) {
+    updateZip();
+    window.location.href = "player.html";
+  }
 }
 
 function updateZipPlayer() {
-  updateZip();
+  if (zipcodeHomeInput.value.length >= 5) {
+    updateZip();
+  }
 }
 
 function sendRequest(url){
