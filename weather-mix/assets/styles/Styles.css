@@ -3,6 +3,8 @@ body {
   margin: auto;
   font-family: -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;
   background-image: url(../images/home2.jpg);
+  background-position: center top;
+  background-size: 100% auto;
   color: white;
 }
 
