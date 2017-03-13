@@ -6,6 +6,10 @@ body {
   color: white;
 }
 
+h1 {
+  font-size: 2.75em;
+}
+
 .footer {
   font-size: .8em;
   margin-left: auto;
@@ -35,9 +39,10 @@ body {
 }
 
 #logo {
-  height: 80px;
+  height: 200px;
   margin: auto;
   display: block;
+  padding-top: 40px;
 }
 
 hr {
@@ -60,7 +65,7 @@ hr {
 
 button {
   background: transparent;
-  border: 1px solid white;
+  border: 1px transparent;
   outline: none;
   color: white;
 }
@@ -74,7 +79,7 @@ a.big-button {
 
 i.fa {
   color: white;
-  font-size: 1.5em;
+  font-size: 2.6em;
 }
 
 .big-button {
@@ -83,7 +88,7 @@ i.fa {
   width: 220px;
   margin: auto;
   font-size: 1.5em;
-  font-weight: bold;
+  /*font-weight: bold;*/
   text-align: center;
 }
 

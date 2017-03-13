@@ -1,14 +1,15 @@
 #track{
     width: 500px;
     height: 10px;
-    background: #000000;
+    background: #fff;
+    opacity: .3;
     text-align:center;
 }
 
 #scrubber{
     width:2px;
     height: 10px;
-    background: Red;
+    background: red;
 }
 
 .fa {
@@ -26,7 +27,8 @@ button:hover{
     width: 100px;
     height: 8px;
     margin-bottom: 2px;
-    background: #000000;
+    background: #fff;
+    opacity: .3;
     text-align:center;
 }
 
@@ -41,5 +43,5 @@ button:hover{
 #volume-slider{
     width:2px;
     height: 8px;
-    background: Red;
+    background: #fff;
 }
