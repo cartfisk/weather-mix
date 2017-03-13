@@ -6,7 +6,8 @@ var baseUrl = "http://api.openweathermap.org/data/2.5/weather?";
 var weatherIconBaseUrl = "http://openweathermap.org/img/w/";
 
 // HTML elements from index.html
-var zipcodeInput = document.getElementById('zipcode');
+var zipcodeHomeInput = document.getElementById('zipcode-home');
+var zipcodePlayerInput = document.getElementById('zipcode-player');
 var submitButton = document.getElementById('zip-submit');
 // appended to baseUrl when input is recieved
 var zipCode;
@@ -23,13 +24,22 @@ var temp;
 
 // called on keyup event in zip input field, constructs
 function updateZip() {
-  if (zipcodeInput.value.length >= 5) {
-    zipCode = "zip=" + zipcodeInput.value + ",us&APPID=" + appId;
+  if (zipcodeHomeInput.value.length >= 5) {
+    zipCode = "zip=" + zipcodeHomeInput.value + ",us&APPID=" + appId;
     var url = baseUrl + zipCode + "&units=imperial";
     console.log(zipCode);
     sendRequest(url);
   }
 };
+
+function updateZipHome() {
+  updateZip();
+  window.location.href = "player.html";
+}
+
+function updateZipPlayer() {
+  updateZip();
+}
 
 function sendRequest(url){
   var xmlhttp = new XMLHttpRequest();
@@ -41,18 +51,18 @@ function sendRequest(url){
 	weatherCode = weather.code;
 
 	condition = data.weather[0].main;
-	temp = data.main["temp"];
+	temp = Math.round(data.main["temp"]);
 	iconCode = data.weather[0].icon;
-	
+
 	console.log(weatherCode);
 	console.log("Current Condition: " + condition);
 	console.log("Current Temp: " + temp);
 	console.log("Icon Code: " + iconCode);
 
-	setWeatherIcon();
+	// setWeatherIcon();
 	setCurTempText();
 	setConditionText();
-	
+
     }
   };
 
@@ -60,7 +70,8 @@ function sendRequest(url){
   xmlhttp.send();
 }
 
-zipcodeInput.addEventListener('keyup', updateZip, false);
+zipcodeHomeInput.addEventListener('keyup', updateZipHome, false);
+zipcodePlayerInput.addEventListener('keyup', updateZipPlayer, false);
 
 
 //Sets the current weather icon for the UI

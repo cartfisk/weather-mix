@@ -2,21 +2,61 @@ body {
   width: 850px;
   margin: auto;
   font-family: -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;
+  background-image: url(../images/home2.jpg);
+  color: white;
 }
 
 .footer {
   font-size: .8em;
+  position: fixed;
+  bottom: 0px;
+  left: 35%;
 }
 .text-center {
   text-align: center;
 }
 
-#zipcode {
+.zipcode {
   display: block;
-  width: 90px;
+  height: 40px;
+  width: 120px;
   margin: auto;
   font-size: 1.5em;
   text-align: center;
+  background: transparent;
+  border: 1px solid white;
+  outline: none;
+  color: white;
+}
+
+#logo {
+  height: 80px;
+  margin: auto;
+  display: block;
+}
+
+hr {
+	border-top: .2px solid #fff;
+  margin-top: 20px;
+}
+
+#home-padding {
+  height: 150px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #fff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #fff;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #fff;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #fff;
 }
 
 table {
