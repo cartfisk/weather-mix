@@ -1,5 +1,5 @@
 # weather-mix
-Web application that recommends SoundCloud playlists based on current weather conditions.
+Web application that recommends SoundCloud playlists based on current weather conditions. The project makes use of the OpenWeatherMap.org API as well as the official SoundCloud Javascript SDK.
 
 # Installation Instructions
 1. Go ahead and ```git clone``` the entire repo into your local file system.
