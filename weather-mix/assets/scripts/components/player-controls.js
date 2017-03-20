@@ -1,7 +1,3 @@
-SC.initialize({
-     client_id: '175c043157ffae2c6d5fed16c3d95a4c'
-});
-
 //Get UI Element references
 var title = document.getElementById('title');
 var duration = document.getElementById('duration');
@@ -21,12 +17,12 @@ var repeatOne = false;
 
 
 /**
-Handles resolving a Track URL from SoundCloud and streams it by 
+Handles resolving a Track URL from SoundCloud and streams it by
 creating a new HTML5 audio object to stream to custom player
 **/
-var streamTrack = function(track){    
+var streamTrack = function(track){
     SC.get("/tracks/" + track.id).then(function(sound){
-	
+
 	var uri = sound.uri + "/stream?client_id=175c043157ffae2c6d5fed16c3d95a4c";
 
 	if (audioInstance){
@@ -73,13 +69,13 @@ var streamTrack = function(track){
 	    streamNextSong();
 
 	};
-	
+
     });
 
-    //Set Rest of track Information on Below player 
+    //Set Rest of track Information on Below player
     console.log("Now Playing: " + nowPlaying);
     title.innerText = track.title + ' by ' + track.user.username;
-    
+
 };
 
 /*********************************************************************
@@ -107,7 +103,7 @@ var togglePlayPauseStream = function(){
 	else{
 	    audioInstance.play();
 	    togglePlayPauseUI();
-	    console.log("Playing.");   
+	    console.log("Playing.");
 	}
     }
     else{
@@ -132,7 +128,7 @@ var streamNextSong = function(){
 	else{
 	    var href = getNextTrackHref(nowPlaying);
 	}
-	
+
 	console.log("Currently playing: " + nowPlaying);
 	console.log("Next song should be: " + href);
 
@@ -156,7 +152,7 @@ var streamNextSong = function(){
 		return true;
 	    }
 	}
-	
+
 	//These two events are the equivalent of STOP.
 	audioInstance.pause();
 	audioInstance.currentTime = 0;
@@ -170,10 +166,10 @@ var streamNextSong = function(){
 
 // Keeps track of player position every 1000 mils
 var startCounter = setInterval(function() {
-    if(audioInstance) {	
+    if(audioInstance) {
 	var newTime = audioInstance.currentTime;
 	var text = getMinSec(newTime);
-	
+
 	currTime.innerText = text;
 	console.log(currTime.innerText);
     }
@@ -244,14 +240,14 @@ document.getElementById('previous').addEventListener('dblclick', function(){
 	    SC.resolve(href).then(streamTrack);
 	    nowPlaying = href;
 	    return true;
-	}	
+	}
 	else{
 	    console.log("No Previous Track Found.");
 	    //Current Song then must be first in queue.
 	    audioInstance.currentTime = 0; //Restart Song
 	    return true;
 	}
-    }    
+    }
 });
 
 
@@ -261,7 +257,7 @@ $("#track").on("click", function(e){
 	console.log("Scrubber Updated.");
 	var xClick = e.clientX;
 	var trackLeft = $(this).position().left;
-   
+
 	var percentagePos = (xClick - trackLeft) / totalTrackWidth;
 
 	//Update the UI Position of track
@@ -275,11 +271,11 @@ $("#track").on("click", function(e){
 $("#volume-track").on("click", function(e){
     if(audioInstance){
 	var totalVolumeTrack = $("#volume-track").width();
-	
+
 	console.log("Volume Updated.");
 	var xClick = e.clientX;
 	var sliderLeft = $(this).position().left;
-	
+
 	var percentagePos = (xClick - sliderLeft) / totalVolumeTrack;
 
 	//Update the UI Position of track

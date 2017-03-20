@@ -5,7 +5,7 @@
     "weatherMix"
   ],
   "description": "Web application that recommends SoundCloud playlists based on current weather conditions.",
-  "main": "weather-mix/index.html",
+  "main": "index.html",
   "keywords": [
     "music",
     "weather",
@@ -24,6 +24,8 @@
     "tests"
   ],
   "dependencies": {
-    "jquery-ui": "1.12.1"
+    "jquery-ui": "1.12.1",
+    "jquery": "1.12.4",
+    "font-awesome": "fontawesome#^4.7.0"
   }
 }

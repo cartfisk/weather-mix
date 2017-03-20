@@ -1,0 +1,158 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>weatherMix</title>
+    <meta name="description" content="weatherMix">
+    <meta name="author" content="webMusic DevTeam LUC CS424">
+
+    <script type="text/javascript" src="../sdk.js"></script>
+
+    <link rel="stylesheet" href="assets/styles/styles.css?v=1.0">
+
+    <link href="assets/styles/jquery-ui.css" rel="stylesheet" type="text/css">
+
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="assets/styles/music-player.css" rel="stylesheet" type="text/css">
+
+    <link href="assets/styles/weather-ui.css" rel="stylesheet" type="text/css">
+
+
+    <!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+	<![endif]-->
+  </head>
+
+  <body>
+    <header>
+      <h1 class="text-center">weatherMix</h1>
+      <hr />
+      <h3 class="text-center">Discover the right music for the weather.</h2>
+    </header>
+
+    <main>
+      <!-- <input class="zipcode" id="zipcode-player" type="text" placeholder="Zipcode" maxlength="5"></input> -->
+
+      <div id="weather-information">
+        <img id="weather-icon" class="text-center" src="">
+        <p id="temperature" class="text-center"></p>
+        <p id="condition" class="text-center"></p>
+      </di2v>
+
+      <div id="sc-likes">
+        <h3>[Playlist Name]</h3>
+
+        <table id="sort" rules="rows">
+          <thead>
+            <tr>
+              <th>Track</th>
+              <th>Artist</th>
+              <th>Time</th>
+              <th>Add</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="clickable-row">
+              <td class="track-name-url"><a href="https://soundcloud.com/brianfresco/higher-feat-chance-the-rapper-and-blue-hawaii">Higher feat. Chance the Rapper and Blue Hawaii</a></td>
+              <td class="artist">Brian Fresco</td>
+              <td class="track-time">4:01</td>
+              <td class="track-action"><i class="fa fa-bars"></i></td>
+            </tr>
+            <tr class="clickable-row">
+              <td class="track-name-url"><a href="https://soundcloud.com/pharez-uzzah/on-the-phly-phortify">Phortify</a></td>
+              <td class="artist">Pharez Uzzah</td>
+              <td class="track-time">2:22</td>
+              <td class="track-action"><i class="fa fa-bars"></i></td>
+            </tr>
+            <tr class="clickable-row">
+              <td class="track-name-url"><a href="https://soundcloud.com/andersonpaak/room-in-here-feat-the-game-sonyae-elise">Room In Here feat. The Game & Sonyae Elise</a></td>
+              <td class="artist">anderson .paak</td>
+              <td class="track-time">3:59</td>
+              <td class="track-action"><i class="fa fa-bars"></i></td>
+            </tr>
+            <tr class="clickable-row">
+              <td class="track-name-url"><a href="https://soundcloud.com/j-cole/high-for-hours">High for Hours</a></td>
+              <td class="artist">J. Cole</td>
+              <td class="track-time">4:11</td>
+              <td class="track-action"><i class="fa fa-bars"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="padding-block-50"> </div>
+
+      <!--Player Elements -->
+      <div style="width:100%; text-align: center;" id="control-bar">
+        <div style="display: inline-block" id="player-elements">
+          <!-- Playback Controls -->
+          <div id="player-controls">
+            <button style="float: left" id="shuffle"><i id="shuffle-inner-icon" class="fa fa-random"></i></button>
+    	      <button id="previous" ><i class="fa fa-step-backward"></i></button>
+            <button id="play-pause"><i id="play-pause-inner-icon" class="fa fa-play"></i></button>
+            <button id="next"><i class="fa fa-step-forward"></i></button>
+    	      <button id="repeat" style="float: right; "><i id="repeat-inner-icon" class="fa fa-repeat"></i></button>
+          </div>
+          <!-- /Playback Controls -->
+
+          <div>
+            <!-- Current Time Text To left of scrubber --->
+            <span style="display: inline-block" id="currTime">0:00</span>
+            <!-- /Current Time Text To left of scrubber --->
+
+            <!-- Music Scrubber -->
+            <div style="display: inline-block" id="track">
+              <div id="scrubber" class="bar">
+              </div>
+            </div>
+            <!-- /Music Scrubber -->
+
+            <span style="display: inline-block" id="duration">0:00</span>
+          </div>
+
+
+          <div id="padding-block-50"> </div>
+
+          <!-- Volume Slider and Icons -->
+          <div id="volume-elements">
+
+            <button  id="volume-up-image" style="cursor: default;"><i class="fa fa-volume-down"></i></button>
+
+            <div id="volume-track">
+              <div id="volume-slider" class="bar"></div>
+            </div>
+
+    	      <button id="volume-down-image" style="cursor: default;"><i class="fa fa-volume-up"></i></button>
+
+          </div>
+          <!-- /Volume Slider and Icons -->
+
+          <!-- Track title Placed Below the Scrubber -->
+          <div id="title"></div>
+          <!-- /Track title Placed Below the Scrubber -->
+        </div>
+      </div>
+      <a id="change-location" class="big-button" href="index.html">Change Location</a>
+      <!-- /Player Elements -->
+
+    </main>
+
+
+    <footer>
+      <p class="footer text-center">Copyright 2017 Carter Konz, Nieky Allen, Jesse Meza, Zvonko Kavelij</p>
+    </footer>
+
+    <script src="assets/scripts/global.js"></script>
+    <script src="assets/scripts/player.js"></script>
+    <script src="assets/scripts/components/player-queue.js"></script>
+    <script src="assets/scripts/components/player-controls.js"></script>
+
+    <!-- Bower Javascript Dependencies -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+
+  </body>
+</html>

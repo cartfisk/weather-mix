@@ -1,0 +1,102 @@
+extends layout.pug
+
+block append head
+  link(href='../assets/styles/music-player.css', rel='stylesheet', type='text/css')
+  link(href='../assets/styles/weather-ui.css', rel='stylesheet', type='text/css')
+
+block prepend body
+  header
+    h1.text-center weatherMix
+    hr
+    h3.text-center Discover the right music for the weather.
+
+  main
+    #weather-information
+      img#weather-icon.text-center(src='')
+      p#temperature.text-center
+      p#condition.text-center
+      #sc-likes
+        h3 [Playlist Name]
+        table#sort(rules='rows')
+          thead
+            tr
+              th Track
+              th Artist
+              th Time
+              th Add
+          tbody
+            tr.clickable-row
+              td.track-name-url
+                a(href='https://soundcloud.com/brianfresco/higher-feat-chance-the-rapper-and-blue-hawaii') Higher feat. Chance the Rapper and Blue Hawaii
+              td.artist Brian Fresco
+              td.track-time 4:01
+              td.track-action
+                i.fa.fa-bars
+            tr.clickable-row
+              td.track-name-url
+                a(href='https://soundcloud.com/pharez-uzzah/on-the-phly-phortify') Phortify
+              td.artist Pharez Uzzah
+              td.track-time 2:22
+              td.track-action
+                i.fa.fa-bars
+            tr.clickable-row
+              td.track-name-url
+                a(href='https://soundcloud.com/andersonpaak/room-in-here-feat-the-game-sonyae-elise') Room In Here feat. The Game &amp; Sonyae Elise
+              td.artist anderson .paak
+              td.track-time 3:59
+              td.track-action
+                i.fa.fa-bars
+            tr.clickable-row
+              td.track-name-url
+                a(href='https://soundcloud.com/j-cole/high-for-hours') High for Hours
+              td.artist J. Cole
+              td.track-time 4:11
+              td.track-action
+                i.fa.fa-bars
+      #padding-block-50
+      #control-bar(style='width:100%; text-align: center;')
+        #player-elements(style='display: inline-block')
+          #player-controls
+            button#shuffle(style='float: left')
+              i#shuffle-inner-icon.fa.fa-random
+            |
+            button#previous
+              i.fa.fa-step-backward
+            |
+            button#play-pause
+              i#play-pause-inner-icon.fa.fa-play
+            |
+            button#next
+              i.fa.fa-step-forward
+            |
+            button#repeat(style='float: right; ')
+              i#repeat-inner-icon.fa.fa-repeat
+          div
+            span#currTime(style='display: inline-block') 0:00
+            #track(style='display: inline-block')
+              #scrubber.bar
+            |
+            span#duration(style='display: inline-block') 0:00
+          #padding-block-50
+          #volume-elements
+            button#volume-up-image(style='cursor: default;')
+              i.fa.fa-volume-down
+            #volume-track
+              #volume-slider.bar
+            |
+            button#volume-down-image(style='cursor: default;')
+              i.fa.fa-volume-up
+          #title
+      |
+      a#change-location.big-button(href='index.html') Change Location
+
+block append body
+  script(src='bower_components/jquery/dist/jquery.js')
+  script(src='bower_components/jquery-ui/jquery-ui.js')
+  
+  script(type='text/javascript').
+    var SC = !{JSON.stringify(SC)};
+  script(src='assets/scripts/player.js')
+  script(src='assets/scripts/components/player-queue.js')
+  script(src='assets/scripts/components/player-controls.js')
+  

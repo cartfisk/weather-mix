@@ -1,0 +1,33 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title weatherMix
+    meta(name='description', content='weatherMix')
+    meta(name='author', content='webMusic DevTeam LUC CS424')
+    //- script(type='text/javascript', src='../sdk.js')
+    link(href='bower_components/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    link(href='assets/styles/styles.css?v=1.0', rel='stylesheet', type='text/css')
+    link(href='assets/styles/music-player.css', rel='stylesheet', type='text/css')
+    link(href='assets/styles/weather-ui.css', rel='stylesheet', type='text/css')
+    //- if lt IE 9 script(src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js')
+    
+  body
+    header
+      img#logo(src='assets/images/weathermix-logo.png')
+      h1.text-center weatherMix
+      hr
+      h3.text-center Find the right music for the weather.
+    main
+      #padding-block-150
+      |
+      input#zipcode-home.zipcode(type='text', placeholder='Zipcode', maxlength='5')
+      #weather-information
+        p#temperature.text-center
+        p#condition.text-center
+      #padding-block-150
+    footer
+      p.footer.text-center Copyright 2017 Carter Konz, Nieky Allen, Jesse Meza, Zvonko Kavelij
+    script(src='assets/scripts/global.js')
+    script(src='assets/scripts/index.js')
+    script(src='assets/scripts/appid.js')

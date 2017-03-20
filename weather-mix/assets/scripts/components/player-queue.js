@@ -3,8 +3,8 @@ $(document).ready(function() {
     reloadQueue();
 });
 
+SC = JSON.parse(SC);
 
-    
 //Load all of the songs into player queue upon loading page.
 var reloadQueue = function(e, ui){
     //Reset Queue
@@ -25,15 +25,24 @@ var reloadQueue = function(e, ui){
 };
 
 
- // Handle the click event of the row to start
- // Streaming song
- $('.clickable-row').click(function(event) {
-     event.preventDefault();
-     var href = $(this).find("a").attr("href");
-     if(href) {
-	 SC.resolve(href).then(streamTrack);
-	 nowPlaying = $(this).find("a").attr("href");
-     }
+// Handle the click event of the row to start
+// Streaming song
+$('.clickable-row').click(function(event) {
+  event.preventDefault();
+  var href = $(this).find("a").attr("href");
+  if(href) {
+
+    // SC.get(href, function(err, track) {
+    //       if ( err ) {
+    //         throw err;
+    //       } else {
+    //         console.log('track retrieved:', track);
+    //       }
+    //     });
+  	SC.resolve(href).then(streamTrack);
+    nowPlaying = $(this).find("a").attr("href");
+
+  }
  });
 
 
@@ -70,7 +79,7 @@ var getNextTrackHref = function(trackHref){
 
 };
 
-//handles getting the Href of the previous track in queue, 
+//handles getting the Href of the previous track in queue,
 //Returns null if no track is found.
 var getPreviousTrackHref = function(trackHref){
     currentTrackIndex = trackQueue.indexOf(trackHref);
@@ -100,7 +109,7 @@ var getQueueFirst = function(){
 
 //Handles returning a randomly selected href from trackqueue;
 var getRandomSong = function(){
-    var random = Math.floor((Math.random() * trackQueue.length)); 
+    var random = Math.floor((Math.random() * trackQueue.length));
     var randHref = trackQueue[random];
 
     return randHref;
@@ -130,7 +139,7 @@ var isQueueHead = function(element){
     var queueFirst = $("tbody tr").first();
     var firstHref = queueFirst.find("a").attr("href");
     var target = element.find("a").attr("href");
-    
+
 
     if (!(firstHref === target)){
 	return false;

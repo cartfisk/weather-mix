@@ -1,6 +1,9 @@
 
 # Created by https://www.gitignore.io/api/macos,windows,linux,node,bower
 
+# API Key
+weather-mix/assets/scripts/appid.js
+
 ### Bower ###
 bower_components
 .bower-cache

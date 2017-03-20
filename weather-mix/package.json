@@ -1,0 +1,32 @@
+{
+  "name": "weather-mix",
+  "version": "1.0.0",
+  "description": "Web application that recommends SoundCloud playlists based on current weather conditions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cartfisk/weather-mix.git"
+  },
+  "keywords": [
+    "music",
+    "weather",
+    "soundcloud",
+    "openweathermap",
+    "service",
+    "api"
+  ],
+  "author": "weatherMix",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cartfisk/weather-mix/issues"
+  },
+  "homepage": "https://github.com/cartfisk/weather-mix#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "node-soundcloud": "0.0.6",
+    "pug": "^2.0.0-beta11"
+  }
+}
