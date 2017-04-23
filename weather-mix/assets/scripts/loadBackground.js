@@ -22,7 +22,9 @@
 
 		var lname = data.user.last_name;
 
-		var portfolio_url = data.links.portfolio;
+		var profile_url = data.user.links.html;
+
+		console.log("Links:" +  profile_url);
 
 		console.log("New Background Photo obtained. Waiting for content.");
 
@@ -41,7 +43,7 @@
 
 		    console.log("Changing submission name");
 		    
-		    changeSourceAuthor(fname, lname, portfolio_url)
+		    changeSourceAuthor(fname, lname, profile_url)
 
 		}
 	    }
