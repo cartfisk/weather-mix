@@ -10,6 +10,8 @@
     width:2px;
     height: 10px;
     background: red;
+    -webkit-transition: width 200ms linear /**Safari Transition**/
+    transition:  transform 1s width 1ms ease-in-out;
 }
 
 .fa {
@@ -43,5 +45,5 @@ button:hover{
 #volume-slider{
     width:2px;
     height: 8px;
-    background: #fff;
+    background: red;
 }

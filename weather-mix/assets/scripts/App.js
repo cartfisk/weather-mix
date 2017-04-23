@@ -7,7 +7,7 @@ var weatherIconBaseUrl = "http://openweathermap.org/img/w/";
 
 // HTML elements from index.html
 var zipcodeHomeInput = document.getElementById('zipcode-home');
-var zipcodePlayerInput = document.getElementById('zipcode-player');
+//var zipcodePlayerInput = document.getElementById('zipcode-player');
 var submitButton = document.getElementById('zip-submit');
 // appended to baseUrl when input is recieved
 var zipCode;
@@ -41,6 +41,9 @@ function updateZipPlayer() {
   if (zipcodeHomeInput.value.length >= 5) {
     updateZip();
   }
+    else if (zipcodeHomeInput.value == null){
+	console.log("No location Input detected");
+    }
 }
 
 function sendRequest(url){
@@ -73,7 +76,7 @@ function sendRequest(url){
 }
 
 zipcodeHomeInput.addEventListener('keyup', updateZipHome, false);
-zipcodePlayerInput.addEventListener('keyup', updateZipPlayer, false);
+//zipcodePlayerInput.addEventListener('keyup', updateZipPlayer, false);
 
 
 //Sets the current weather icon for the UI
@@ -88,3 +91,7 @@ var setCurTempText = function(){
 var setConditionText = function(){
     $("#condition").text(condition);
 }
+
+
+
+

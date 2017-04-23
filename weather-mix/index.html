@@ -27,16 +27,20 @@
   </head>
 
   <body>
-    <header>
-      <img id="logo" src="assets/images/weathermix-logo.png" /></img>
-      <h1 class="text-center">weatherMix</h1>
-      <hr />
-      <h3 class="text-center">Find the right music for the weather.</h2>
+    <div class="background-image"></div>
+
+    <div class="content" id="content-wrapper">
+
+      <header>
+	<img class="fadeable" id="logo" src="assets/images/weathermix-logo.png" /></img>
+	<h1 class="text-center fadeable oneSec">weatherMix</h1>
+	<hr class="fadeable twoSec"/>
+	<h3 class="text-center fadeable twoSec">Find the right music for the weather.</h2>
 </header>
 
 <main>
   <div id="padding-block-150"> </div>
-  <input class="zipcode" id="zipcode-home" type="text" placeholder="Zipcode" maxlength="5"></input>
+  <input class="zipcode fadeable twoSec" id="zipcode-home" type="text" placeholder="Zipcode" maxlength="5"></input>
   <!-- <button id="zip-submit">Submit</button> -->
 
   <div id="weather-information">
@@ -52,14 +56,16 @@
 
 
 <footer>
-  <p class="footer text-center">Copyright 2017 Carter Konz, Nieky Allen, Jesse Meza, Zvonko Kavelij</p>
+  <p class="footer text-center" id="copyright">Copyright 2017 Carter Konz, Nieky Allen, Jesse Meza, Zvonko Kavelij</p>
+  <a class="footer text-center" id="photo-credit" href="https://unsplash.com/@timtrad/">Photo Submitted by Tim Trad at Unsplash.com </a>
 </footer>
+</div>
 
 
-<script src="assets/scripts/App.js"></script>
+
 <script src="assets/scripts/jquery.js"></script>
 <script src="assets/scripts/jquery-ui.js"></script>
-<script src="assets/scripts/player-queue.js"></script>
-<script src="assets/scripts/player-controls.js"></script>
+<script src="assets/scripts/App.js"></script>
+<script src="assets/scripts/loadBackground.js"></script>
 </body>
 </html>

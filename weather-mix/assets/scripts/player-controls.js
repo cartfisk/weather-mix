@@ -260,8 +260,11 @@ $("#track").on("click", function(e){
     if(audioInstance){
 	console.log("Scrubber Updated.");
 	var xClick = e.clientX;
-	var trackLeft = $(this).position().left;
-   
+
+	console.log("Last Clicked X Pos: " + xClick);
+	
+	var trackLeft = $(this).offset().left;
+	
 	var percentagePos = (xClick - trackLeft) / totalTrackWidth;
 
 	//Update the UI Position of track
@@ -278,7 +281,7 @@ $("#volume-track").on("click", function(e){
 	
 	console.log("Volume Updated.");
 	var xClick = e.clientX;
-	var sliderLeft = $(this).position().left;
+	var sliderLeft = $(this).offset().left;
 	
 	var percentagePos = (xClick - sliderLeft) / totalVolumeTrack;
 
@@ -379,3 +382,4 @@ var setVolumeLevelUI = function(percentage){
 var moveScrubberToPos = function(offset){
     scrubber.css("width", offset);
 };
+
